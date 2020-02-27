@@ -47,5 +47,6 @@ def get_user(screen_name=None):
 
         return render_template("user.html", user=db_user, tweets=statuses) # tweets=db_tweets
 
-    except:
+    except Exception as e:
+        print(e)
         return jsonify({"message": "OOPS User Not Found!"})
